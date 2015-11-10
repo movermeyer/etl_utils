@@ -141,7 +141,7 @@ class TestPhrasalRecognizer(unittest.TestCase):
             time.sleep(0.005)
 
         import mongomock
-        scope = mongomock.Connection().db.TestModel # has no items
+        scope = mongomock.MongoClient().db.TestModel  # has no items
         process_notifier(scope, msg=u"MONGODB")
 
         for item1 in process_notifier(iter(range(1000)), msg=u"[test endless] go "):
