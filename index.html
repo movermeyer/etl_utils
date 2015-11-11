@@ -2,10 +2,10 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>ETL Utils by 17zuoye</title>
+    <title>ETL Utils by Luiti</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
@@ -13,9 +13,9 @@
     <section class="page-header">
       <h1 class="project-name">ETL Utils</h1>
       <h2 class="project-tagline">etl utils</h2>
-      <a href="https://github.com/17zuoye/etl_utils" class="btn">View on GitHub</a>
-      <a href="https://github.com/17zuoye/etl_utils/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/17zuoye/etl_utils/tarball/master" class="btn">Download .tar.gz</a>
+      <a href="https://github.com/Luiti/etl_utils" class="btn">View on GitHub</a>
+      <a href="https://github.com/Luiti/etl_utils/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Luiti/etl_utils/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
@@ -36,11 +36,11 @@
 
 <p>Install it.</p>
 
-<div class="highlight highlight-bash"><pre>pip install etl_utils</pre></div>
+<div class="highlight highlight-source-shell"><pre>pip install etl_utils</pre></div>
 
 <p>Import it.</p>
 
-<div class="highlight highlight-python"><pre><span class="pl-k">from</span> etl_utils <span class="pl-k">import</span> <span class="pl-k">*</span> <span class="pl-c"># increase only 6M memory.</span></pre></div>
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> etl_utils <span class="pl-k">import</span> <span class="pl-k">*</span> <span class="pl-c"># increase only 6 MB memory.</span></pre></div>
 
 <h2>
 <a id="feature-list" class="anchor" href="#feature-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Feature List</h2>
@@ -52,7 +52,9 @@
 <a id="11-process_notifier" class="anchor" href="#11-process_notifier" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.1. <code>process_notifier</code>
 </h4>
 
-<div class="highlight highlight-python"><pre><span class="pl-k">for</span> i1 <span class="pl-k">in</span> process_notifier(iteratable_object, <span class="pl-smi">msg</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-k">u</span><span class="pl-pds">"</span>RANGE<span class="pl-pds">"</span></span>):
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> etl_utils <span class="pl-k">import</span> process_notifier
+<span class="pl-k">import</span> time
+<span class="pl-k">for</span> i1 <span class="pl-k">in</span> process_notifier(iteratable_object, <span class="pl-smi">msg</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-k">u</span><span class="pl-pds">"</span>RANGE<span class="pl-pds">"</span></span>):
     <span class="pl-c"># process(i1)</span>
     time.sleep(<span class="pl-c1">0.005</span>)
 <span class="pl-c"># Example output is:</span>
@@ -76,7 +78,7 @@
 
 <p>Example:</p>
 
-<div class="highlight highlight-markdown"><pre><span class="pl-c"><span class="pl-c1">&gt;</span>&gt;&gt; print({u"你好":u"世界"})</span>
+<div class="highlight highlight-source-gfm"><pre><span class="pl-c"><span class="pl-c1">&gt;</span>&gt;&gt; print({u"你好":u"世界"})</span>
 <span class="pl-c">{u'<span class="pl-cce">\u</span>4f60<span class="pl-cce">\u</span>597d': u'<span class="pl-cce">\u</span>4e16<span class="pl-cce">\u</span>754c'}</span>
 <span class="pl-c"><span class="pl-c"><span class="pl-c1">&gt;</span>&gt;&gt; from etl_utils import uprint</span></span>
 <span class="pl-c"><span class="pl-c"><span class="pl-c"><span class="pl-c1">&gt;</span>&gt;&gt; tmp = uprint({u"你好":u"世界"})</span></span></span>
@@ -89,7 +91,7 @@
 <h4>
 <a id="21-cpickle_cache-function" class="anchor" href="#21-cpickle_cache-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.1. <code>cpickle_cache</code> function</h4>
 
-<div class="highlight highlight-python"><pre>cpickle_cache(cache_file_path, generate_data_func)</pre></div>
+<div class="highlight highlight-source-python"><pre>cpickle_cache(cache_file_path, generate_data_func)</pre></div>
 
 <p>Generate cache data if <code>cache_file_path</code> not exists.</p>
 
@@ -98,7 +100,7 @@
 
 <p>Turn a function into a property.</p>
 
-<div class="highlight highlight-python"><pre><span class="pl-k">class</span> <span class="pl-en">Universe</span>:
+<div class="highlight highlight-source-python"><pre><span class="pl-k">class</span> <span class="pl-en">Universe</span>:
     <span class="pl-en">@cached_property</span>
     <span class="pl-k">def</span> <span class="pl-en">answer</span>(<span class="pl-smi">self</span>):
         <span class="pl-k">return</span> <span class="pl-c1">42</span>
@@ -122,7 +124,7 @@ answer <span class="pl-k">=</span> Universe().answer <span class="pl-c"># no ()<
 <p>Singleton pattern restricts the instantiation of a class to one object,
 see more informations at <a href="http://en.wikipedia.org/wiki/Singleton_pattern">Wikipedia</a> .</p>
 
-<div class="highlight highlight-python"><pre><span class="pl-en">@</span><span class="pl-en">singleton</span>() <span class="pl-c"># or @singleton(multi_init=True)</span>
+<div class="highlight highlight-source-python"><pre><span class="pl-en">@</span><span class="pl-en">singleton</span>() <span class="pl-c"># or @singleton(multi_init=True)</span>
 <span class="pl-k">class</span> <span class="pl-en">MySingleton</span>(<span class="pl-e"><span class="pl-c1">object</span></span>):
 
     <span class="pl-en">@cached_property</span>
@@ -145,7 +147,7 @@ o2 <span class="pl-k">=</span> MySingleton()
 <h2>
 <a id="4-basic-data-structure-utils" class="anchor" href="#4-basic-data-structure-utils" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Basic data structure utils</h2>
 
-<div class="highlight highlight-python"><pre>ListUtils.most_common_inspect(list1)
+<div class="highlight highlight-source-python"><pre>ListUtils.most_common_inspect(list1)
 ListUtils.uniq_seqs(seqs, <span class="pl-smi">uniq_lambda</span><span class="pl-k">=</span><span class="pl-c1">None</span>)
 StringUtils.merge(<span class="pl-k">*</span>strs)
 StringUtils.calculate_text_similarity(text1, text2, <span class="pl-smi">inspect</span><span class="pl-k">=</span><span class="pl-c1">False</span>, <span class="pl-smi">similar_rate_baseline</span><span class="pl-k">=</span><span class="pl-c1">0.0</span>, <span class="pl-smi">skip_special_chars</span><span class="pl-k">=</span><span class="pl-c1">False</span>)
@@ -177,7 +179,7 @@ JsonUtils.unicode_dump(item1)</pre></div>
 
 <p>Load data only when needed.</p>
 
-<div class="highlight highlight-python"><pre><span class="pl-k">from</span> etl_utils <span class="pl-k">import</span> ld
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> etl_utils <span class="pl-k">import</span> ld
 ld.en_us_dict
 ld.two_length_words
 ld.regular_words
@@ -195,7 +197,7 @@ regexp.special_chars</pre></div>
 <h2>
 <a id="6-memory" class="anchor" href="#6-memory" aria-hidden="true"><span class="octicon octicon-link"></span></a>6. Memory</h2>
 
-<div class="highlight highlight-python"><pre><span class="pl-c"># `slots_with_pickle` decorator adding `__slots__` to these classes can</span>
+<div class="highlight highlight-source-python"><pre><span class="pl-c"># `slots_with_pickle` decorator adding `__slots__` to these classes can</span>
 <span class="pl-c"># dramatically reduce the memory footprint, and improve execution speed</span>
 <span class="pl-c"># by eliminating the instance dictionary.</span>
 <span class="pl-c"># And it also possible to pickle/unpickle objects.</span>
@@ -210,7 +212,7 @@ regexp.special_chars</pre></div>
 <h2>
 <a id="7-other-utils" class="anchor" href="#7-other-utils" aria-hidden="true"><span class="octicon octicon-link"></span></a>7. Other utils</h2>
 
-<div class="highlight highlight-python"><pre>calculate_entropy(feature_with_count_dict)
+<div class="highlight highlight-source-python"><pre>calculate_entropy(feature_with_count_dict)
 
 is_nltk_word(str1) <span class="pl-c"># is valid English word</span>
 extract_words(sentence)
@@ -226,7 +228,9 @@ set_default_value(lambdas, <span class="pl-smi">msg</span><span class="pl-k">=</
 <h2>
 <a id="run-tests" class="anchor" href="#run-tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run tests</h2>
 
-<div class="highlight highlight-bash"><pre>python tests/test.py</pre></div>
+<div class="highlight highlight-source-shell"><pre>pip install -r requirements.txt
+pip install nose
+nosetests</pre></div>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
@@ -234,7 +238,7 @@ set_default_value(lambdas, <span class="pl-smi">msg</span><span class="pl-k">=</
 <p>MIT. David Chen @ 17zuoye.</p>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/17zuoye/etl_utils">ETL Utils</a> is maintained by <a href="https://github.com/17zuoye">17zuoye</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/Luiti/etl_utils">ETL Utils</a> is maintained by <a href="https://github.com/Luiti">Luiti</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
@@ -254,4 +258,3 @@ set_default_value(lambdas, <span class="pl-smi">msg</span><span class="pl-k">=</
 
   </body>
 </html>
-
