@@ -5,7 +5,7 @@ ETL Utils
 [![Health](https://landscape.io/github/17zuoye/etl_utils/master/landscape.svg?style=flat)](https://landscape.io/github/17zuoye/etl_utils/master)
 [![Download](https://img.shields.io/pypi/dm/etl_utils.svg?style=flat)](https://pypi.python.org/pypi/etl_utils)
 [![License](https://img.shields.io/pypi/l/etl_utils.svg?style=flat)](https://pypi.python.org/pypi/etl_utils)
-[![Python Versions](https://pypip.in/py_versions/etl_utils/badge.svg?style=flat)](https://pypi.python.org/pypi/etl_utils)
+[![Python Versions](https://img.shields.io/pypi/pyversions/etl_utils.svg?style=flat)](https://pypi.python.org/pypi/etl_utils)
 
 
 All API are listed in `etl_utils/__init__.py`.
